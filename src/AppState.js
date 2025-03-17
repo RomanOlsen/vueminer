@@ -10,9 +10,9 @@ export const AppState = reactive({
   cheese: 0,
   miningPower: 1,
   clickUpgrades: [
-    new Upgrade({id: '1a', isAuto: false ,name: 'Bread', price: 10, quantity: 0, multiplier: 1}),
-    new Upgrade({id: '2a', isAuto: false ,name: 'Butter', price: 20, quantity: 0, multiplier: 1}),
-    new Upgrade({id: '3a', isAuto: false ,name: 'Tallow', price: 30, quantity: 0, multiplier: 1}),
+    new Upgrade({id: '1a', isAuto: false ,name: 'Bread', price: 10, quantity: 0, adder: 1, multiplier: 1}),
+    new Upgrade({id: '2a', isAuto: false ,name: 'Butter', price: 20, quantity: 0, adder: 3, multiplier: 1}),
+    new Upgrade({id: '3a', isAuto: false ,name: 'Tallow', price: 30, quantity: 0, adder: 5, multiplier: 1}),
 
   ],
   automaticUpgrades: [
