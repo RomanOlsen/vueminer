@@ -18,7 +18,6 @@ function purchaseUpgrade(upgradeType) {
 
 </script>
 
-// TODO find a way to have it fix spacing when saved. Now fixed!
 
 
 // HTML
@@ -44,8 +43,9 @@ function purchaseUpgrade(upgradeType) {
       </div>
       <div class="col-6">
         <div v-for="upgrade in AppState.automaticUpgrades" class="d-flex justify-content-start">
-          <button @click="purchaseUpgrade(upgrade)" class="btn btn-warning text-light my-1">{{ upgrade.name }} | x{{
-            upgrade.multiplier }} Cheese per second | Price: {{ upgrade.price }} | Amount Bought: {{ upgrade.quantity }}</button>
+          <button @click="purchaseUpgrade(upgrade)" class="btn btn-warning text-light my-1">{{ upgrade.name }} | + x{{
+            upgrade.multiplier }} Cheese per second | Price: {{ upgrade.price }} | Amount Bought: {{ upgrade.quantity
+            }}</button>
         </div>
       </div>
     </div>

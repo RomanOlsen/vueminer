@@ -4,13 +4,16 @@ import { AppState } from "@/AppState.js";
 class MoonService{
   
   autoMine(){
-    
+    AppState.cheese *= AppState.autoMiningPower
+    AppState.cheese.toFixed(3)
   }
   
   mine(){
     // let cheese = AppState.cheese
     // cheese = (cheese * AppState.miningPower) + 1
     AppState.cheese += AppState.miningPower
+    AppState.cheese.toFixed(3)
+
     
     // console.log('mining');
     
@@ -18,7 +21,6 @@ class MoonService{
   
   
   
-  setInterval(autoMine, 1000);
   
   purchaseUpgrade(upgrade){
     console.log('purchasing', upgrade.name);
@@ -26,14 +28,16 @@ class MoonService{
       console.log('not enough cheese');
       return
     }
+
+
     AppState.cheese -= upgrade.price
     upgrade.price++
     upgrade.quantity++
+    if (upgrade.isAuto == true) {
+      AppState.autoMiningPower += upgrade.multiplier
+      return
+    }
     AppState.miningPower += upgrade.adder
-    AppState.multiplier
-    // if (upgrade.isAuto == true) {
-      
-    // }
     
   }
 }
