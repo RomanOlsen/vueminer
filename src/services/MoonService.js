@@ -4,11 +4,30 @@ import { AppState } from "@/AppState.js";
 class MoonService{
   
   autoMine(){
+    if (AppState.cheese > 1000 || AppState.cheese == 'You win') {
+      AppState.cheese = 'You win'
+      // AppState.cheese = 0
+      AppState.miningPower = 0 
+      AppState.autoMiningPower = 0
+      AppState.won = true
+      return
+    }
+  
     AppState.cheese *= AppState.autoMiningPower
     AppState.cheese.toFixed(3)
   }
   
   mine(){
+
+    if (AppState.cheese > 1000 || AppState.cheese == 'You win') {
+      AppState.cheese = 'You win'
+      // AppState.cheese = 0
+      AppState.miningPower = 0 
+      AppState.autoMiningPower = 0
+      AppState.won = true
+      return
+    }
+  
     // let cheese = AppState.cheese
     // cheese = (cheese * AppState.miningPower) + 1
     AppState.cheese += AppState.miningPower
@@ -19,8 +38,18 @@ class MoonService{
     
   }
   
+  checkIfWon(){
+    if (AppState.cheese > 1000000 || AppState.cheese == 'You win') {
+      AppState.cheese = 'You win'
+      AppState.cheese = 0
+      AppState.miningPower = 0 
+      AppState.autoMiningPower = 0
+      AppState.won = true
+      return
+    }
+  }
   
-  
+
   
   purchaseUpgrade(upgrade){
     console.log('purchasing', upgrade.name);

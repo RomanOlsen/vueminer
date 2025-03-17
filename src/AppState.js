@@ -9,7 +9,8 @@ export const AppState = reactive({
   account: null,
   cheese: 0,
   miningPower: 1,
-  autoMiningPower: 1, // 1x multiplier. Auto stuff multiplies. Manual click adds
+  autoMiningPower: 1,// 1x multiplier. Auto stuff multiplies. Manual click adds
+  won: false, 
   clickUpgrades: [
     new Upgrade({id: '1a', isAuto: false ,name: 'Bread', price: 10, quantity: 0, adder: 1, multiplier: 1}),
     new Upgrade({id: '2a', isAuto: false ,name: 'Butter', price: 20, quantity: 0, adder: 3, multiplier: 1}),
